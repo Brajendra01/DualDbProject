@@ -1,0 +1,30 @@
+spring:
+
+  profiles.active: local
+  
+#  #profiles.active=local, dev, test, mp, prod
+#   #spring.profiles.active=development  
+#
+--- 
+spring:
+  profiles: local 
+  
+spring.datasource.user:
+  userdb.driverClassName: com.mysql.cj.jdbc.Driver
+  userdb.url: jdbc:mysql://localhost:3306/userdb
+  userdb.username: root
+  userdb.password: root
+  
+spring.datasource.prod:
+  proddb.driverClassName: com.mysql.cj.jdbc.Driver
+  proddb.url: jdbc:mysql://localhost:3306/productdb 
+  proddb.username: root
+  proddb.password: root
+    
+encryption:
+  key : $e(uRe~K3y_@9^3#
+  initVector: $e(uReIn!tV3(t0r
+  encoderPattern: UTF-8
+  algo: AES
+  cipherPattern: AES/CBC/PKCS5PADDING
+ 
